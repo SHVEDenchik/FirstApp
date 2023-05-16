@@ -2,12 +2,15 @@
 {
     static void Main(string[] args)
     {
-        enum Seemaphore
-    {
+        var name = "Max";
 
-        red = 100,
-        yellow = 200,
-        green = 300
-    }
+        Console.Write("Сколько Вам лет?");
+        var age = checked((byte)int.Parse(Console.ReadLine()));
+        Console.WriteLine("Ваше имя {0} и Ваш возвраст {1} ", name, age);
+
+        Console.Write("Какой Ваш любимый день недели? ");
+
+        var day = (DayOfWeek)int.Parse(Console.ReadLine());
+        Console.WriteLine("Ваш любимый день недели {0}", day);
     }
 }
