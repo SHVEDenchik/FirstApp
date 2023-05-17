@@ -1,16 +1,34 @@
-﻿internal class Program
+﻿using System;
+
+class MainClass
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var name = "Max";
+        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-        Console.Write("Сколько Вам лет?");
-        var age = checked((byte)int.Parse(Console.ReadLine()));
-        Console.WriteLine("Ваше имя {0} и Ваш возвраст {1} ", name, age);
+        var color = Console.ReadLine();
 
-        Console.Write("Какой Ваш любимый день недели? ");
+        if (color == "red")
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
 
-        var day = (DayOfWeek)int.Parse(Console.ReadLine());
-        Console.WriteLine("Ваш любимый день недели {0}", day);
+            Console.WriteLine("Your color is red!");
+        }
+
+        else if (color == "green")
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is green!");
+        }
+        else
+        {
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is cyan!");
+        }
     }
 }
