@@ -4,39 +4,43 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        (string Name, string LastName, string Login, int LoginLenght, bool HasPet, double PetAge, string[] favColors, double Age) User;     //создаем кортеж
 
-        var color = Console.ReadLine();
-
-        switch (color)
+        for (int countUsers = 0; countUsers < 3; countUsers++)                                                                              // делаем три итерации для трех пользователей
         {
-            case "red":
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is red!");
-                break;
+            Console.WriteLine("Введите ваше имя");
+            User.Name = Console.ReadLine();                                                                                                //записываем данные в поле кортежа
 
-            case "green":
-                Console.BackgroundColor = ConsoleColor.Green;
-                Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Введите вашу фамилию");
+            User.LastName = Console.ReadLine();
 
-                Console.WriteLine("Your color is green!");
-                break;
+            Console.WriteLine("Укажите ваш логин");
+            User.Login = Console.ReadLine();
 
-            case "cyan":
-                Console.BackgroundColor = ConsoleColor.Cyan;
-                Console.ForegroundColor = ConsoleColor.Black;
+            User.LoginLenght = User.Login.Length;
 
-                Console.WriteLine("Your color is cyan!");
-                break;
+            Console.WriteLine("Укажите, есть ли у Вас домашнее животное? Да / нет");
+            var result = Console.ReadLine();
+            if (result == "Да")
+            {
+                User.HasPet = true;
+            }
+            else
+            {
+                User.HasPet = false;
+            }
 
-            default:
-                Console.BackgroundColor = ConsoleColor.Yellow;
-                Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Укажите Ваш возраст");
+            User.Age = double.Parse(Console.ReadLine());                //Парсим введенную строку в формат double
 
-                Console.WriteLine("Your color is Yellow!");
-                break;
+            User.favColors = new string[3];                             // элемент кортежа как созданный масив из 3 значений
+            Console.WriteLine("Укажите 3 своих любимых цвета");
+
+            for (int i = 0; i < User.favColors.Length; i++)
+            {
+                User.favColors[i] = Console.ReadLine();
+            }
         }
     }
 }
