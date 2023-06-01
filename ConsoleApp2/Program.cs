@@ -2,22 +2,30 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
-    {
-        var favcolors = new String[3];
-
-        for (int i = 0; i < favcolors.Length; i++)
+    static void Main(string[] args)
         {
-            favcolors[i] = ShowColor();                                 // Записываем данные в масив вызовом метода ShowColor, который считывает данные с клавиатуры
+            Console.WriteLine("Напишите что-то");
+            var saidword = Console.ReadLine();
+
+            Console.WriteLine("Укажите глубину эха");
+            var deep = int.Parse(Console.ReadLine());
+
+            Echo(saidword, deep);
+
+            Console.ReadKey();
         }
 
-        for (int i = 0;i < favcolors.Length; i++)
+        static void Echo(string saidword, int deep)
         {
-            Console.WriteLine(favcolors[i]);
+            var modif = saidword;
+            if (modif.Length > 2)
+        {
+            modif = modif.Remove(0, 2);
+        }
+        Console.WriteLine("..." + modif);
+        if (deep > 1)
+        {
+            Echo(modif, deep - 1);
         }
     }
-
-    static string ShowColor() => Console.ReadLine();                    // конструкция возвращает в метод прочитанную строку. То же самое что льзуем только при 1 операции в методе)
-}
-
-
+    }
