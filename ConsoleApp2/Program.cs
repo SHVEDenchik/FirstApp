@@ -10,7 +10,7 @@ class MainClass
         {
 
             Console.WriteLine("Введите ваше имя");
-            User.Name = Console.ReadLine();                                                                                                //записываем данные в поле кортежа
+            User.Name = Console.ReadLine();                                                                                                 //записываем данные в поле кортежа
 
             Console.WriteLine("Введите вашу фамилию");
             User.LastName = Console.ReadLine();
@@ -32,9 +32,9 @@ class MainClass
             }
 
             Console.WriteLine("Укажите Ваш возраст");
-            User.Age = double.Parse(Console.ReadLine());                //Парсим введенную строку в формат double
+            User.Age = double.Parse(Console.ReadLine());                                                                                    //Парсим введенную строку в формат double
 
-            User.favColors = new string[3];                             // элемент кортежа как созданный масив из 3 значений
+            User.favColors = new string[3];                                                                                                 // элемент кортежа как созданный масив из 3 значений
             Console.WriteLine("Укажите 3 своих любимых цвета");
 
             for (int i = 0; i < User.favColors.Length; i++)
@@ -43,4 +43,8 @@ class MainClass
             }
         }
     }
+
+    static string ShowColor() => Console.ReadLine();                    // конструкция возвращает в метод прочитанную строку. То же самое что льзуем только при 1 операции в методе)
 }
+
+
